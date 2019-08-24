@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
 	def create
 		post = Post.create(params[:post])
-		redirect_to post_path(post)
+		redirect_to post_path(@post)
 	end
 
 	def edit
@@ -25,6 +25,6 @@ class PostsController < ApplicationController
 	def update
 		post = Post.find(params[:id])
 		post.update(params.require(:post))
-		redirect_to post_path(post)
+		redirect_to post_path(@post)
 	end
 end
