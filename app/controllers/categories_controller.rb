@@ -21,8 +21,8 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    category = Category.find(params[:id])
-    category.update(params.require(:category))
+    @category = Category.find(params[:id])
+    @category.update(category_params(:category))
     redirect_to category_path(@category)
   end
 
